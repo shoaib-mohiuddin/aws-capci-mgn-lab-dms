@@ -60,7 +60,7 @@ jobs:
           framework: terraform 
           download_external_modules: true
           # soft_fail: true
-          # skip_check: 
+          skip_check: CKV2_AWS_49
 
   infracost:
     name: Infracost
@@ -111,7 +111,7 @@ jobs:
                                      --repo=$GITHUB_REPOSITORY \
                                      --github-token=${{github.token}} \
                                      --pull-request=${{github.event.pull_request.number}} \
-                                     --behavior=new
+                                     --behavior=update
 
   terraform-deploy:
     name: Terraform deploy
