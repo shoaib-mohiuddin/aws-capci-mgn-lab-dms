@@ -10,7 +10,7 @@
 ## Overview
 #### AWS Application Migration Service(MGN)
 ![mgn](images/mgn.png "AWS MGN")
-*Source: [AWS MGN Documentation](https://docs.aws.amazon.com/mgn/latest/ug/Network-Settings-Video.html)*
+###### *Source: [AWS MGN Documentation](https://docs.aws.amazon.com/mgn/latest/ug/Network-Settings-Video.html)*
 
 1. Ensure egress on port 1500 for source/virtual on-premises EC2 instances is allowed.
 2. Create an IAM user named *MGNUser* with associated access keys and attach the *AWSApplicationMigrationAgentInstallationPolicy* to grant appropriate permissions.
@@ -31,14 +31,16 @@
 
 #### AWS Database Migration Service(DMS)
 ![dms](images/dms.png "AWS DMS")
-*Source: [AWS DMS Documentation](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html)*
+###### *Source: [AWS DMS Documentation](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html)*
 
 1. The source database is hosted on an EC2 instance running MySQL engine and accessed using PHPMyAdmin.
 2. Ensure that both ingress and egress traffic on the MySQL engine port (3306) is allowed for the DMS replication instance to facilitate seamless replication.
-3. On the source database, run these queries:
-`CREATE USER 'phpmyadmin'@'dms_repl_inst_pri_ip' IDENTIFIED BY 'db_passwd';`
-`GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'phpmyadmin'@'dms_repl_inst_pri_ip' WITH GRANT OPTION;` 
-`FLUSH PRIVILEGES;`
+3. On the source database, run these queries:<br/>
+```
+CREATE USER 'phpmyadmin'@'dms_repl_inst_pri_ip' IDENTIFIED BY 'db_passwd';
+GRANT CREATE, ALTER, DROP, INSERT, UPDATE, DELETE, SELECT, REFERENCES, RELOAD on *.* TO 'phpmyadmin'@'dms_repl_inst_pri_ip' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+```
 4. To establish the necessary connection between the replication instance and the RDS instance, ensure that ingress on the MySQL engine port (3306) is allowed from the DMS replication instance.
 5. Test the connectivity of both the source and target endpoints with the DMS replication instance. If any errors occur, promptly troubleshoot and resolve them. 
 6. After successful endpoint testing, proceed to initiate the DMS migration task. The migration task will progress through multiple stages, and it is important to closely monitor its status. Continue monitoring until the task status reflects *Load Complete*. This ensures that the migration process has been successfully executed, and the data has been loaded into the target destination.
