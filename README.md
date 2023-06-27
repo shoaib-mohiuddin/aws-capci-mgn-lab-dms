@@ -2,8 +2,8 @@
 
 #### Table of Contents
 1. [Overview](#overview)
-    * [AWS Application Migration Service(MGN)](#AWS Application Migration Service(MGN))
-    * [AWS Database Migration Service(DMS)](#AWS Database Migration Service(DMS))
+    * [AWS Application Migration Service(MGN)](#mgn)
+    * [AWS Database Migration Service(DMS)](#dms)
 2. [Requirements](#requirements)
 3. [Providers](#Providers)
 4. [Inputs](#inputs)
