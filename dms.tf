@@ -1,3 +1,16 @@
+# This module creates 10 resources, including the necessary IAM roles with relevant permissions required for the dms replication instance.
+
+# aws_dms_certificate.this
+# aws_dms_endpoint.this
+# aws_dms_event_subscription.this
+# aws_dms_replication_instance.this
+# aws_dms_replication_subnet_group.this
+# aws_dms_replication_task.this
+# aws_iam_role.dms_access_for_endpoint
+# aws_iam_role.dms_cloudwatch_logs_role
+# aws_iam_role.dms_vpc_role
+# time_sleep.wait_for_dependency_resources
+
 module "dms" {
   source  = "terraform-aws-modules/dms/aws"
   version = "1.6.1"
