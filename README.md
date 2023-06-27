@@ -2,6 +2,8 @@
 
 #### Table of Contents
 1. [Overview](#overview)
+    * [AWS Application Migration Service(MGN)](#AWS Application Migration Service(MGN))
+    * [AWS Database Migration Service(DMS)](#AWS Database Migration Service(DMS))
 2. [Requirements](#requirements)
 3. [Providers](#Providers)
 4. [Inputs](#inputs)
@@ -43,7 +45,7 @@ FLUSH PRIVILEGES;
 ```
 4. To establish the necessary connection between the replication instance and the RDS instance, ensure that ingress on the MySQL engine port (3306) is allowed from the DMS replication instance.
 5. Test the connectivity of both the source and target endpoints with the DMS replication instance. If any errors occur, promptly troubleshoot and resolve them. 
-6. After successful endpoint testing, proceed to initiate the DMS migration task. The migration task will progress through multiple stages, and it is important to closely monitor its status. Continue monitoring until the task status reflects *Load Complete*. This ensures that the migration process has been successfully executed, and the data has been loaded into the target destination.
+6. After successful endpoint testing, proceed to initiate the DMS migration task. The migration task will progress through multiple stages, and it is important to closely monitor its status. Continue monitoring until the task status reflects *LOAD COMPLETE*. This ensures that the migration process has been successfully executed, and the data has been loaded into the target destination.
 7. To verify the migration of data and tables from the source database, log in to the RDS MySQL database. Once logged in, carefully examine the database to ensure that the migrated data and tables are present and accurately replicated from the source. This step helps confirm the successful completion of the migration process.
 
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
