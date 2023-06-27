@@ -1,13 +1,18 @@
 # aws-capci-mgn-lab-dms
 
 #### Table of Contents
-1. [Usage](#usage)
+1. [Overview](#overview)
 2. [Requirements](#requirements)
 3. [Providers](#Providers)
 4. [Inputs](#inputs)
 5. [Outputs](#outputs)
-## Usage
-*various commands
+## Overview
+#### AWS Application Migration Service(MGN)
+![mgn](images/mgn.png "AWS MGN")
+
+#### AWS Database Migration Service(DMS)
+![dms](images/dms.png "AWS DMS")
+
 <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
